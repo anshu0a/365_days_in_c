@@ -22,6 +22,7 @@
 
 
 #include <stdio.h>
+#include <math.h>
 
 int main() {
     int a,b,c;
@@ -46,6 +47,43 @@ int main() {
       printf("\nright angle triangle");
     }else{
        printf("\nnot a right angle triangle");
+    }
+    
+    return 0;
+}
+
+
+
+// Write a C program that reads three positive integers and:
+
+// Checks if the numbers form a consecutive sequence (like 5 6 7 or 10 9 8)
+
+// Checks if they form a geometric progression (like 2 4 8 or 81 27 9)
+
+// Checks if they form an arithmetic progression (like 3 5 7 or 100 90 80)
+
+// If none of the above, print "No recognizable pattern."
+
+
+
+int main() {
+float a, b, c;
+int mch = 0;
+scanf("%f%f%f",&a,&b,&c);
+if(b - a == 1 && c - b == 1 || b - a == -1 && c - b == -1  ){
+    puts("consecutive sequence");
+    mch = 1;
+}
+if (fabs((a / b) - (b / c)) < 0.0001){
+    puts("geometric progression");
+    mch = 1;
+}
+if(b - a == c - b){
+    puts("arithmetic progression");
+    mch = 1;
+}
+    if(!mch){
+        printf("not recognizable pattern");
     }
     
     return 0;
